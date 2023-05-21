@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-     CLIENTES
-     {% for  cliente in clientes  %}
+{% extends 'base.html' %}
+
+{% block TITULO %}
+   CLIENTES
+{% endblock TITULO %}
+
+{% block CONTENIDO %}
+
+     {% for cliente in clientes  %}
         <h2>{{cliente.nombre}} </h2>
         <p>{{cliente.apellido}}</p>
         <p>{{cliente.direccion}}</p>
@@ -16,6 +14,6 @@
         <p>{{cliente.pais_origen_id}}</p>
      {% endfor %}
 
-     <a href="{% url 'index' %}"> Ir a menú principal </a>
-</body>
-</html>     
+     <a href="{% url 'index' %}"> Ir a menu principal </a>
+   
+{% endblock CONTENIDO %}
